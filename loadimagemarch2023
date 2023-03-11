@@ -1,0 +1,12 @@
+from PIL import Image
+
+
+def rgb_of_pixel(img_path, x, y):
+    im = Image.open(img_path).convert('RGB')
+    r, g, b = im.getpixel((x, y))
+    a = (r, g, b)
+    return a
+
+
+img = "rose.png"
+print rgb_of_pixel(img, 5, 5)
